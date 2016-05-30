@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel='stylesheet' type='text/css' href='css/slate.min.css'>
+  <link rel='stylesheet' type='text/css' href='css/style.css'>
+</head>
+<body>
+  <div class='item-container'>
+    <h1 class='title'>ZackWatch<br>Configuration Page</h1>
+  </div>
+
+  <div class='item-container'>
+    <div class='item-container-header'>Customize</div>
+    <div class='item-container-content'>
+      <label class='item'>
+        Forecast.io API key
+	<input id='myAPIKey' type='text' class='item-text'>
+      </label>
+      <label class='item'>
+        URL to JSON file
+	<input id='mypplurl' type='text' class='item-text'>
+      </label>
+      <label class='item'>
+        Default latitude
+	<input id='latitude' type='text' class='item-text'>
+      </label>
+      <label class='item'>
+        Default longitude
+	<input id='longitude' type='text' class='item-text'>
+      </label>
+      <label class='item'>
+        Use default lat/long only
+	<input id='defaultlocOnl' type='checkbox' class='item-checkbox'>
+      </label>
+      <label class='item'>
+        Use metric values
+	<input id='metric' type='checkbox' class='item-checkbox'>
+      </label>
+      <label class='item'>
+        Vibration
+	<input id='vibration' type='checkbox' class='item-checkbox' checked>
+      </label>
+    </div>
+    <div class='item-container-footer'>
+      These settings only change on the watch after you click save.
+    </div>
+  </div>
+
+  <div class='item-container'>
+    <div class='button-container'>
+      <input id='submitButton' type='button' class='item-button' value='SUBMIT'>
+    </div>
+  </div>
+
+  <script src='js/slate.min.js'></script>
+  <script src='js/main.js'></script>
+</body>
+</html>
