@@ -49,7 +49,7 @@ function getAndStoreConfigData() {
     latitude: $latitude.val(),
     longitude: $longitude.val(),
     defaultlocOnly: $defaultlocOnly[0].checked,
-    metric: $metric[0].checked,
+    metric: $metric[0].checked
     //vibration: $vibration[0].checked
   };
 
