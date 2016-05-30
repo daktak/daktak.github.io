@@ -15,26 +15,51 @@ function submitHandler() {
 }
 
 function loadOptions() {
-  var $backgroundColorPicker = $('#backgroundColorPicker');
-  var $timeFormatCheckbox = $('#timeFormatCheckbox');
+  var $myAPIKey = $('#myAPIKey');
+  var $mypplurl = $('#mypplurl');
+  var $latitude = $('#latitude');
+  var $longitude = $('#longitude');
+  var $defaultlocOnly = $('#defaultlocOnly');
+  var $metric = $('#metric');
+  var $vibration = $('#vibration');
 
-  if (localStorage.backgroundColor) {
-    $backgroundColorPicker[0].value = localStorage.backgroundColor;
-    $timeFormatCheckbox[0].checked = localStorage.twentyFourHourFormat === 'true';
+  if (localStorage.myAPIKey) {
+    $myAPIKey[0].value = localStorage.apikey;
+    $mypplurl[0].value = localStorage.ppl;
+    $latitude[0].value = localStorage.latitude;
+    $longitude[0].value = localStorage.longitude;
+    $defaultlocOnly[0].checked = localStorage.defaultlocOnly;
+    $metric[0].value = localStorage.metric;
+    $vibration[0] = localStorage.vibration === true;
   }
 }
 
 function getAndStoreConfigData() {
-  var $backgroundColorPicker = $('#backgroundColorPicker');
-  var $timeFormatCheckbox = $('#timeFormatCheckbox');
+  var $myAPIKey = $('#myAPIKey');
+  var $mypplurl = $('#mypplurl');
+  var $latitude = $('#latitude');
+  var $longitude = $('#longitude');
+  var $defaultlocOnly = $('#defaultlocOnly');
+  var $metric = $('#metric');
+  var $vibration = $('#vibration');
 
   var options = {
-    backgroundColor: $backgroundColorPicker.val(),
-    twentyFourHourFormat: $timeFormatCheckbox[0].checked
+    myAPIKey: $myAPIKey.val(),
+    mypplurl: $mypplurl.val(),
+    latitude: $latitude.val(),
+    longitude: $longitude.val(),
+    defaultlocOnly: $defaultlocOnly[0].checked,
+    metric: $metric[0],
+    vibration: $vibration[0]
   };
 
-  localStorage.backgroundColor = options.backgroundColor;
-  localStorage.twentyFourHourFormat = options.twentyFourHourFormat;
+  localStorage.myAPIKey = options.myAPIKey;
+  localStorage.mypplurl = options.mypplurl;
+  localStorage.latitude = options.latitude;
+  localStorage.longitude = options.longitude;
+  localStorage.defaultlocOnly = options.defaultlocOnly;
+  localStorage.metric = options.metric;
+  localStorage.vibration = options.vibration;
 
   console.log('Got options: ' + JSON.stringify(options));
   return options;
