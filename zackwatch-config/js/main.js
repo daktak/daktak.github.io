@@ -21,7 +21,7 @@ function loadOptions() {
   var $longitude = $('#longitude');
   var $defaultlocOnly = $('#defaultlocOnly');
   var $metric = $('#metric');
-  var $vibration = $('#vibration');
+  //var $vibration = $('#vibration');
 
   if (localStorage.myAPIKey) {
     $myAPIKey[0].value = localStorage.myAPIKey;
@@ -30,7 +30,7 @@ function loadOptions() {
     $longitude[0].value = localStorage.longitude;
     $defaultlocOnly[0].checked = localStorage.defaultlocOnly === false;
     $metric[0].checked = localStorage.metric === false;
-    $vibration[0].checked = localStorage.vibration === true;
+    //$vibration[0].checked = localStorage.vibration === true;
   }
 }
 
@@ -41,7 +41,7 @@ function getAndStoreConfigData() {
   var $longitude = $('#longitude');
   var $defaultlocOnly = $('#defaultlocOnly');
   var $metric = $('#metric');
-  var $vibration = $('#vibration');
+  //var $vibration = $('#vibration');
 
   var options = {
     myAPIKey: $myAPIKey.val(),
@@ -50,7 +50,7 @@ function getAndStoreConfigData() {
     longitude: $longitude.val(),
     defaultlocOnly: $defaultlocOnly[0].checked,
     metric: $metric[0].checked,
-    vibration: $vibration[0].checked
+    //vibration: $vibration[0].checked
   };
 
   localStorage.myAPIKey = options.myAPIKey;
@@ -59,7 +59,7 @@ function getAndStoreConfigData() {
   localStorage.longitude = options.longitude;
   localStorage.defaultlocOnly = options.defaultlocOnly;
   localStorage.metric = options.metric;
-  localStorage.vibration = options.vibration;
+  //localStorage.vibration = options.vibration;
 
   console.log('Got options: ' + JSON.stringify(options));
   return options;
