@@ -32,7 +32,7 @@ function loadOptions() {
     //$metric.checked = localStorage.metric;
     if (localStorage.metric == 'true') {
       console.log("metric true");
-      $metric.checked = true;
+      $metric[0].checked = true;
     } 
     /*else {
       $metric.removeAttribute("checked");
