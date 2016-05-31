@@ -31,7 +31,7 @@ function loadOptions() {
     if (localStorage.metric == 'true') {
       $metric[0].checked = true;
     } 
-    if (localStorage.defaultlocOnly) {
+    if (localStorage.defaultlocOnly == 'true') {
       $defaultlocOnly[0].checked = true;
     }
     //$vibration[0].checked = localStorage.vibration === true;
