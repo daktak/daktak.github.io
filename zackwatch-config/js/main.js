@@ -33,9 +33,10 @@ function loadOptions() {
     if (localStorage.metric == 'true') {
       console.log("metric true");
       $metric.setAttribute("checked"); 
-    } else {
+    } 
+    /*else {
       $metric.removeAttribute("checked");
-    }
+    }*/
     console.log(localStorage.metric)
     //$vibration[0].checked = localStorage.vibration === true;
   }
