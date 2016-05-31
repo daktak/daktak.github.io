@@ -33,7 +33,7 @@ function loadOptions() {
     console.log(localStorage.metric)
     //$vibration[0].checked = localStorage.vibration === true;
   }
-  console.log('Got options: ' + JSON.stringify(options));
+  console.log('Got options: ' + JSON.stringify(localStorage));
 
 }
 
