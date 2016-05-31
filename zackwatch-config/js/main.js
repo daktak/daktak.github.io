@@ -28,8 +28,8 @@ function loadOptions() {
     $mypplurl[0].value = localStorage.mypplurl;
     $latitude[0].value = localStorage.latitude;
     $longitude[0].value = localStorage.longitude;
-    $defaultlocOnly[0].checked = JSON.stringify(localStorage.defaultlocOnly);
-    $metric[0].checked = JSON.stringify(localStorage.metric);
+    $defaultlocOnly[0].checked = localStorage.defaultlocOnly === true;
+    $metric[0].checked = localStorage.metric === true;
     console.log(localStorage.metric)
     //$vibration[0].checked = localStorage.vibration === true;
   }
