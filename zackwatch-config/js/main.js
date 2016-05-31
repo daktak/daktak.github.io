@@ -31,8 +31,9 @@ function loadOptions() {
     $defaultlocOnly[0].checked = localStorage.defaultlocOnly === false;
     $metric[0].checked = localStorage.metric === false;
     console.log(localStorage.metric)
-    $('#defaultlocOnly').attr('checked', localStorage.defaultlocOnly);
-    $('#metric').attr('checked',localStorage.metric);
+    if (localStorage.metric) {
+      $('#metric').setAttribute("checked");
+    }
     //$vibration[0].checked = localStorage.vibration === true;
   }
 
