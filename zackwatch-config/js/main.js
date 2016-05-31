@@ -28,16 +28,13 @@ function loadOptions() {
     $mypplurl[0].value = localStorage.mypplurl;
     $latitude[0].value = localStorage.latitude;
     $longitude[0].value = localStorage.longitude;
-    $defaultlocOnly.checked = localStorage.defaultlocOnly;
+    $defaultlocOnly[0].checked = localStorage.defaultlocOnly;
     //$metric.checked = localStorage.metric;
     if (localStorage.metric == 'true') {
-      console.log("metric true");
+      //console.log("metric true");
       $metric[0].checked = true;
     } 
-    /*else {
-      $metric.removeAttribute("checked");
-    }*/
-    console.log(localStorage.metric)
+    console.log(localStorage.defaultlocOnly);
     //$vibration[0].checked = localStorage.vibration === true;
   }
 
