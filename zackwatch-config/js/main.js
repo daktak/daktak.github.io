@@ -28,12 +28,11 @@ function loadOptions() {
     $mypplurl[0].value = localStorage.mypplurl;
     $latitude[0].value = localStorage.latitude;
     $longitude[0].value = localStorage.longitude;
-    $defaultlocOnly.checked = localStorage.defaultlocOnly === false;
-    $metric.checked = localStorage.metric === false;
+    $defaultlocOnly[0].checked = localStorage.defaultlocOnly === false;
+    $metric[0].checked = localStorage.metric === false;
     console.log(localStorage.metric)
     //$vibration[0].checked = localStorage.vibration === true;
   }
-  console.log('Got options: ' + JSON.stringify(localStorage));
 
 }
 
@@ -51,8 +50,8 @@ function getAndStoreConfigData() {
     mypplurl: $mypplurl.val(),
     latitude: $latitude.val(),
     longitude: $longitude.val(),
-    defaultlocOnly: $defaultlocOnly.checked,
-    metric: $metric.checked
+    defaultlocOnly: $defaultlocOnly[0].checked,
+    metric: $metric[0].checked
     //vibration: $vibration[0].checked
   };
 
