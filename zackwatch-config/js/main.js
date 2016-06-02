@@ -4,12 +4,12 @@
 })();
 
 function submitHandler() {
-  var $submitButton = $('#submitButton_input');
+  var $submitButton = $('#submitButton');
 
   $submitButton.on('click', function() {
-    console.log('Submit_input');
+    console.log('Submit');
 
-    var return_to = getQueryParam('return_to', 'pebblejs://close#_input');
+    var return_to = getQueryParam('return_to', 'pebblejs://close#');
     document.location = return_to + encodeURIComponent(JSON.stringify(getAndStoreConfigData()));
   });
 }
@@ -34,6 +34,7 @@ function loadOptions() {
     $defaultlocOnly[0].checked = Boolean(localStorage.defaultlocOnly == "true");
     $refresh[0].value = localStorage.ppl_disable;
     $vibration[0].checked = Boolean(localStorage.vibration == "true");
+    $ppl_disable = Boolean(localStorage.ppl_disable == "true");
   }
 
 }
@@ -56,7 +57,7 @@ function getAndStoreConfigData() {
     longitude: $longitude.val(),
     defaultlocOnly: $defaultlocOnly[0].checked,
     metric: $metric[0].checked,
-    ppl_disable: $ppl_disable.val(),
+    ppl_disable: $ppl_disable[0].checked,
     refresh: $refresh.val(),
     vibration: $vibration[0].checked
   };
