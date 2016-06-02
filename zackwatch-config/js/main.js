@@ -22,7 +22,7 @@ function loadOptions() {
   var $defaultlocOnly = $('#defaultlocOnly_input');
   var $metric = $('#metric_input');
   var $vibration = $('#vibration_input');
-  var $refresh = $('#refresh_input');
+  var $refresh = $('#refresh_text');
   var $ppl_disable = $('#ppl_disable_input');
 
   if (localStorage.apikey) {
@@ -47,6 +47,7 @@ function getAndStoreConfigData() {
   var $metric = $('#metric_input');
   var $vibration = $('#vibration_input');
   var $ppl_disable = $('#ppl_disable_input');
+  var $refresh = $('#refresh_text');
 
   var options = {
     apikey: $apikey.val(),
@@ -56,6 +57,7 @@ function getAndStoreConfigData() {
     defaultlocOnly: $defaultlocOnly[0].checked,
     metric: $metric[0].checked,
     ppl_disable: $ppl_disable.val(),
+    refresh: $refresh.val(),
     vibration: $vibration[0].checked
   };
 
@@ -67,6 +69,7 @@ function getAndStoreConfigData() {
   localStorage.metric = options.metric;
   localStorage.ppl_disable = options.ppl_disable;
   localStorage.vibration = options.vibration;
+  localStorage.refresh = options.refresh;
 
   console.log('Got options: ' + JSON.stringify(options));
   return options;
