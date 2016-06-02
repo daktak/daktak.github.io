@@ -22,7 +22,7 @@ function loadOptions() {
   var $defaultlocOnly = $('#defaultlocOnly_input');
   var $metric = $('#metric_input');
   var $vibration = $('#vibration_input');
-  var $refresh = $('#refresh_text');
+  var $refresh = $('#refresh_slider');
   var $ppl_disable = $('#ppl_disable_input');
 
   if (localStorage.apikey) {
@@ -32,7 +32,7 @@ function loadOptions() {
     $longitude[0].value = localStorage.longitude;
     $metric[0].checked = Boolean(localStorage.metric == "true");
     $defaultlocOnly[0].checked = Boolean(localStorage.defaultlocOnly == "true");
-    $refresh[0].value = localStorage.ppl_disable;
+    $refresh[0].value = localStorage.refresh;
     $vibration[0].checked = Boolean(localStorage.vibration == "true");
     $ppl_disable = Boolean(localStorage.ppl_disable == "true");
   }
@@ -48,7 +48,7 @@ function getAndStoreConfigData() {
   var $metric = $('#metric_input');
   var $vibration = $('#vibration_input');
   var $ppl_disable = $('#ppl_disable_input');
-  var $refresh = $('#refresh_text');
+  var $refresh = $('#refresh_slider');
 
   var options = {
     apikey: $apikey.val(),
