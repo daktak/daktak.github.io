@@ -28,9 +28,11 @@ function loadOptions() {
     $mypplurl[0].value = localStorage.mypplurl;
     $latitude[0].value = localStorage.latitude;
     $longitude[0].value = localStorage.longitude;
-    if (localStorage.metric == 'true') {
+    /*if (localStorage.metric == 'true') {
       $metric[0].checked = true;
     } 
+    */
+    $metric[0].checked = Boolean(localStorage.getItem('metric') == "true");
     if (localStorage.defaultlocOnly == 'true') {
       $defaultlocOnly[0].checked = true;
     }
