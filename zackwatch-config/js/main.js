@@ -4,69 +4,69 @@
 })();
 
 function submitHandler() {
-  var $submitButton = $('#submitButton');
+  var $submitButton = $('#submitButton_input');
 
   $submitButton.on('click', function() {
-    console.log('Submit');
+    console.log('Submit_input');
 
-    var return_to = getQueryParam('return_to', 'pebblejs://close#');
+    var return_to = getQueryParam('return_to', 'pebblejs://close#_input');
     document.location = return_to + encodeURIComponent(JSON.stringify(getAndStoreConfigData()));
   });
 }
 
 function loadOptions() {
-  var $myAPIKey = $('#myAPIKey');
-  var $mypplurl = $('#mypplurl');
-  var $latitude = $('#latitude');
-  var $longitude = $('#longitude');
-  var $defaultlocOnly = $('#defaultlocOnly');
-  var $metric = $('#metric');
-  //var $vibration = $('#vibration');
+  var $apikey = $('#apikey_input');
+  var $ppl = $('#ppl_input');
+  var $latitude = $('#latitude_input');
+  var $longitude = $('#longitude_input');
+  var $defaultlocOnly = $('#defaultlocOnly_input');
+  var $metric = $('#metric_input');
+  var $vibration = $('#vibration_input');
+  var $refresh = $('#refresh_input');
+  var $ppl_disable = $('#ppl_disable_input');
 
-  if (localStorage.myAPIKey) {
-    $myAPIKey[0].value = localStorage.myAPIKey;
-    $mypplurl[0].value = localStorage.mypplurl;
+  if (localStorage.apikey) {
+    $apikey[0].value = localStorage.apikey;
+    $ppl[0].value = localStorage.ppl;
     $latitude[0].value = localStorage.latitude;
     $longitude[0].value = localStorage.longitude;
-    /*if (localStorage.metric == 'true') {
-      $metric[0].checked = true;
-    } 
-    */
-    $metric[0].checked = Boolean(localStorage.getItem('metric') == "true");
-    if (localStorage.defaultlocOnly == 'true') {
-      $defaultlocOnly[0].checked = true;
-    }
-    //$vibration[0].checked = localStorage.vibration === true;
+    $metric[0].checked = Boolean(localStorage.metric == "true");
+    $defaultlocOnly[0].checked = Boolean(localStorage.defaultlocOnly == "true");
+    $refresh[0].value = localStorage.ppl_disable;
+    $vibration[0].checked = Boolean(localStorage.vibration == "true");
   }
 
 }
 
 function getAndStoreConfigData() {
-  var $myAPIKey = $('#myAPIKey');
-  var $mypplurl = $('#mypplurl');
-  var $latitude = $('#latitude');
-  var $longitude = $('#longitude');
-  var $defaultlocOnly = $('#defaultlocOnly');
-  var $metric = $('#metric');
-  //var $vibration = $('#vibration');
+  var $apikey = $('#apikey_input');
+  var $ppl = $('#ppl_input');
+  var $latitude = $('#latitude_input');
+  var $longitude = $('#longitude_input');
+  var $defaultlocOnly = $('#defaultlocOnly_input');
+  var $metric = $('#metric_input');
+  var $vibration = $('#vibration_input');
+  var $ppl_disable = $('#ppl_disable_input');
 
   var options = {
-    myAPIKey: $myAPIKey.val(),
-    mypplurl: $mypplurl.val(),
+    apikey: $apikey.val(),
+    ppl: $ppl.val(),
     latitude: $latitude.val(),
     longitude: $longitude.val(),
     defaultlocOnly: $defaultlocOnly[0].checked,
-    metric: $metric[0].checked
-    //vibration: $vibration[0].checked
+    metric: $metric[0].checked,
+    ppl_disable: $ppl_disable.val(),
+    vibration: $vibration[0].checked
   };
 
-  localStorage.myAPIKey = options.myAPIKey;
-  localStorage.mypplurl = options.mypplurl;
+  localStorage.apikey = options.apikey;
+  localStorage.ppl = options.ppl;
   localStorage.latitude = options.latitude;
   localStorage.longitude = options.longitude;
   localStorage.defaultlocOnly = options.defaultlocOnly;
   localStorage.metric = options.metric;
-  //localStorage.vibration = options.vibration;
+  localStorage.ppl_disable = options.ppl_disable;
+  localStorage.vibration = options.vibration;
 
   console.log('Got options: ' + JSON.stringify(options));
   return options;
