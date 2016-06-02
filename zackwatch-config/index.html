@@ -1,64 +1,168 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 25 March 2009), see www.w3.org">
   <meta charset="UTF-8">
+
   <title></title>
   <link rel='stylesheet' type='text/css' href='css/slate.min.css'>
   <link rel='stylesheet' type='text/css' href='css/style.css'>
 </head>
+
 <body>
   <div class='item-container'>
-    <h1 class='title'>ZackWatch<br>Configuration Page</h1>
+    <h1 class='title'>People Watching Configuration Page</h1>
   </div>
 
-  <div class='item-container'>
-    <div class='item-container-header'>Customize</div>
-    <div class="item-container-header">Forecast.io API key</div>
-    <div class='item-container-content'>
-      <label class='item'>
-	<div class="item-input-wrapper">
-	  <input id='myAPIKey' type='text' class='item-text' />
-	</div>
-      </label>
-    <div class="item-container-header">URL to JSON file</div>
-      <label class='item'>
-        <div class="item-input-wrapper">
-	  <input id='mypplurl' type='text' class='item-text' />
-	</div>
-      </label>
-    <div class="item-container-header">Default latitude</div>
-      <label class='item'>
-        <div class="item-input-wrapper">
-	  <input id='latitude' type='text' class='item-text' />
-	</div>
-      </label>
-    <div class="item-container-header">Default longitude</div>
-      <label class='item'>
-        <div class="item-input-wrapper">
-	  <input id='longitude' type='text' class='item-text' />
-	</div>
-      </label>
-      <label class='item'>
-        Use default lat/long only
-	<input id='defaultlocOnly' type='checkbox' class='item-toggle' />
-      </label>
-      <label class='item'>
-        Use metric values
-	<input id='metric' type='checkbox' class='item-toggle' />
-      </label>
+  <div class="item-container">
+    <div class="item-container-header">
+      Your forecast.io API key
     </div>
-    <div class='item-container-footer'>
-      These settings only change on the watch after you click save.
+
+    <div class="item-container-content">
+      <div class="item-input-wrapper">
+        <label class="item"><input id="apikey_input" type="text"
+        class="item-input" name="apikey-input" placeholder=
+        "forecast.io API key"></label>
+      </div>
     </div>
+  </div>
+
+  <div class="item-container">
+    <div class="item-container-header">
+      Use default location only
+    </div>
+
+    <div class="item-container-content">
+      <label class="item">Toggle off to use current
+      location<input type="checkbox" id="defaultlocOnly_input"
+      class="item-toggle" name="toggle-loc"></label>
+    </div>
+  </div>
+
+  <div class="item-container">
+    <div class="item-container-header">
+      Latitude
+    </div>
+
+    <div class="item-container-content">
+      <div class="item-input-wrapper">
+        <label class="item"><input id="latitude_input" type="text"
+        class="item-input" name="lat-input" placeholder=""></label>
+      </div>
+    </div>
+  </div>
+
+  <div class="item-container">
+    <div class="item-container-header">
+      Longitude
+    </div>
+
+    <div class="item-container-content">
+      <div class="item-input-wrapper">
+        <label class="item"><input id="longitude_input" type="text"
+        class="item-input" name="long-input" placeholder=
+        ""></label>
+      </div>
+    </div>
+  </div>
+
+<div class="item-container">
+  <div class="item-container-header">Refresh Interval in Minutes</div>
+  <div class="item-container-content">
+    <label class="item">
+      <input type="range" id="refresh_slider" class="item-slider" name="slider-1" max="60" min="5" step="5" value="10">
+      <div class="item-input-wrapper item-slider-text">
+        <input type="text" id="refresh_text" class="item-input" name="slider-1" value="10" disabled="disabled">
+      </div>
+    </label>
+    <div class="item-container-footer">
+    Setting very low values may cause high battery use.
+  </div>
+  </div>
+</div>
+
+  <div class="item-container">
+    <div class="item-container-header">
+      Disable People Watching? At present, this is not implimented.
+    </div>
+
+    <div class="item-container-content">
+      <label class="item">Toggle ON to disable the "Weasley clock"
+      feature. <input type="checkbox" id="ppl_disable_input" class=
+      "item-toggle" name="toggle-2"></label>
+
+      <div class="item-container-footer">
+        Disabling people tracking functionality will instead
+      </div>
+    </div>
+  </div>
+
+  <div class="item-container">
+    <div class="item-container-header">
+      Vibrate to notify
+    </div>
+
+    <div class="item-container-content">
+      <label class="item">Toggle on to vibrate
+      <input type="checkbox" id="defaultlocOnly_input"
+      class="item-toggle" name="toggle-loc"></label>
+    </div>
+  </div>
+
+  <div class="item-container">
+    <div class="item-container-header">
+      The URL of your JSON file.
+    </div>
+
+    <div class="item-container-content">
+      <div class="item-input-wrapper">
+        <label class="item"><input id="ppl_input" type="text"
+        class="item-input" name="ppl-input" placeholder=
+        "http://mywebsite.blah.net/people.json"></label>
+      </div>
+
+      <div class="item-container-footer">
+        The location of a JSON string hosted on a webpage that
+        looks like this:<br>
+        <br>
+        {"Z":"1", "M":"1", "S":"1", "A":"1"}<br>
+        <br>
+        where each letter is the initial of somebody you live with,
+        and the number represents their presence at home. Don't
+        forget "http://" at the beginning or it won't work.<br>
+        Look <a href=
+        "http://github.com/Zwater/zackwatch-public">here</a> for
+        help.
+      </div>
+    </div>
+  </div>
+
+  <div class="item-container">
+    <div class="item-container-header">
+      Celcius or Fahrenheit?
+    </div>
+
+    <div class="item-container-content">
+      <label class="item">Toggle on for Celcius <input type=
+      "checkbox" id="metric_input" class="item-toggle" name=
+      "toggle-1"></label>
+    </div>
+  </div>
+
+  <div class='item-container-footer'>
+    These settings only change on the watch after you click save.
   </div>
 
   <div class='item-container'>
     <div class='button-container'>
-      <input id='submitButton' type='button' class='item-button' value='SUBMIT'>
+      <input id='submitButton' type='button' class='item-button'
+      value='SUBMIT'>
     </div>
-  </div>
-
-  <script src='js/slate.min.js'></script>
-  <script src='js/main.js'></script>
+  </div><script src='js/slate.min.js' type="text/javascript">
+</script><script src='js/main.js' type="text/javascript">
+</script>
 </body>
 </html>
