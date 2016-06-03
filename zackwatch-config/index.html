@@ -163,5 +163,26 @@
   </div>
 <script src='js/slate.min.js' type="text/javascript"></script>
 <script src='js/main.js' type="text/javascript"></script>
+<script>
+  var defaultlocbox = document.getElementById('defaultlocOnly_input');
+  defaultlocbox.addEventListener('change', function() {
+  console.log('checkbox changed');
+  if (defaultlocbox.checked == true) {
+    console.log('using default loc')
+    document.getElementById('longitude_input').value = '0.1278';
+    document.getElementById('latitude_input').value = '51.5074';
+    document.getElementById('longitude_input').disabled = 'disabled';
+    document.getElementById('latitude_input').disabled = 'disabled';
+  }
+  else {
+    console.log('Using GPS loc')
+    document.getElementById('longitude_input').value = '';
+    document.getElementById('latitude_input').value = '';
+    document.getElementById('longitude_input').disabled = false;
+    document.getElementById('latitude_input').disabled = false;
+  }
+}
+);
+</script>
 </body>
 </html>
